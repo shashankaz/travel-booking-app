@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Bookings</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'booking/css/global.css' %}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>My Bookings</h1>
+
+      {% if bookings %}
+      <ul>
+        {% for booking in bookings %}
+        <li>
+          {{ booking.travel_option }} - {{ booking.status }}
+
+          {% if booking.status != 'Cancelled' %}
+          <a href="{% url 'cancel_booking' booking.id %}">Cancel</a>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p>You have no bookings.</p>
+      {% endif %}
+    </div>
+  </body>
+</html>

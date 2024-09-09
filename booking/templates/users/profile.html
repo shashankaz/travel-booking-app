@@ -1,0 +1,13 @@
+{% load static %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{% static 'booking/css/global.css' %}"
+/>
+<div class="main-form">
+  <h1>Profile</h1>
+  <form method="POST">
+    {% csrf_token %} {{ u_form.as_p }}
+    <button type="submit">Update Profile</button>
+  </form>
+</div>
