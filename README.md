@@ -58,8 +58,8 @@ This is a simple Travel Booking web application built using Python and Django. T
 
 2. **Create a Virtual Environment**:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   py -m venv .venv
+   .venv\Scripts\activate
    ```
 
 3. **Install Dependencies**:
